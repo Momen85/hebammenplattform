@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebammenstudenten-Plattform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #8fc1e3;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #4a90e2;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        main {
+            padding: 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        .chat, .upload, .blog, .comments {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #8fc1e3;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hebammenstudenten-Plattform</h1>
+</header>
+
+<nav>
+    <a href="#chat">Chat</a>
+    <a href="#upload">Lernmaterialien</a>
+    <a href="#blog">Blog</a>
+</nav>
+
+<main>
+    <section id="chat">
+        <h2>Chat</h2>
+        <div class="chat">
+            <p>Chatfunktion für den Austausch von Informationen und Erfahrungen.</p>
+            <!-- Implementiere hier die Chatfunktion -->
+        </div>
+    </section>
+
+    <section id="upload">
+        <h2>Lernmaterialien Hochladen</h2>
+        <div class="upload">
+            <p>Funktion zum Hochladen und Teilen von Lernmaterialien.</p>
+            <!-- Implementiere hier die Uploadfunktion -->
+            <input type="file" id="fileUpload" />
+            <button onclick="uploadFile()">Hochladen</button>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <div class="blog">
+            <p>Blog für Artikel und Kommentare.</p>
+            <!-- Implementiere hier die Blogfunktion -->
+            <textarea id="newPost" rows="4" cols="50" placeholder="Neuen Blogbeitrag schreiben..."></textarea>
+            <button onclick="postBlog()">Posten</button>
+            <div id="blogPosts">
+                <!-- Blogposts werden hier angezeigt -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Hebammenstudenten-Plattform</p>
+</footer>
+
+<script>
+    function uploadFile() {
+        alert("Datei hochgeladen! (Diese Funktion ist derzeit nur ein Platzhalter.)");
+    }
+
+    function postBlog() {
+        const postContent = document.getElementById('newPost').value;
+        if (postContent.trim()) {
+            const post = document.createElement('div');
+            post.className = 'comments';
+            post.textContent = postContent;
+            document.getElementById('blogPosts').appendChild(post);
+            document.getElementById('newPost').value = '';
+        } else {
+            alert("Bitte einen Blogbeitrag schreiben!");
+        }
+    }
+</script>
+
+</body>
+</html>
